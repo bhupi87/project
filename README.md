@@ -11,7 +11,7 @@ thymeleaf
 Spring security
 Installation
 Download or clone the source code from git repository
-git clone http://github.com/salah3x/project-manager
+git clone 
 Navigate to the downloaded folder
 
 cd [Path to project-manager]
