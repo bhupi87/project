@@ -1,70 +1,41 @@
-# Project Manager
+Project Manager
 
-```
-C'est une application web de gestion des projets.
-```
+Fonctionality
+This application allows the user to create projects. Each project contains tasks to perform. Each task is assigned to a user.
 
-## Fonctionalitées
+The database
+The database used is H2 Database (in memory database). The Fakedata.java class in the config.databaseseed package is used to initialize, at the start of the application, the database with random recordings using DIUS / javafaker ( https://github.com/DiUS/java -faker ).
 
-Cette application permet au utilisateur de créer des projets.
-Chaque projet contient des taches à réaliser.
-Chaque tache est assignée à un utilisateur.
+The users
+Users have different functions depending on their roles. A collaborator has the right to confirm his tasks and see the projects he contributes. A manager can create projects, tasks and assign them to collaborators, moreover he can approve the tasks realized by the collaborator. An administrator has the right to read the messages sent to the site and to assign the role manager to a collaborator.
 
-## La base de donnée
+Note on roles
+It is assumed that the administrator is a manager and collaborator. Similarly a manager is a collaborator. (The opposite is not true.)
 
-La base de donneé utilisée est **H2 Database** (in memory database).
-La classe **Fakedata.java** dans le package config.databaseseed s'occupe d'initialiser, au démmarage de l'application, la base de donnée avec des enregistrement aléatoire en utilisant DIUS/javafaker(https://github.com/DiUS/java-faker).
-
-## Les Utilisateurs
-
-Les utilisateurs ont des fonctionalitées différents selon leurs roles.
-Un **collaborateur** a le droit de confirmer ses taches et voir les projets dont il contribue.
-Un **manager** peut créer des projets, des taches et les assignée à des collaborateurs, de plus il peut approuver les taches réalisées par le collaborateur.
-Un **administrateur** a le droit de lire les messages envoyées au site et d'assigner le role **manager** à un collaborateur.
-
-## Remarque sur les roles
-
-On suppose que l'**administrateur** est un manager et collaborateur.
-De même un **manager** est un collaborateur.
-(L'inverse n'est pas vrai.)
-
-## Outils de developpement
-
-* Java 8
-* Gradle
-* Spring boot 1.5.3.RELEASE
-* H2 database
-* Sring data jpa
-* Spring MVC
-* Thymeleaf
-* Spring security
-
-## Installation
-
-* Télécharger ou cloner le code source depuis git repository
-```
+Development tools
+Java 8
+gradle
+Spring boot 1.5.3.RELEASE
+H2 database
+Sring data jpa
+Spring MVC
+thymeleaf
+Spring security
+Installation
+Download or clone the source code from git repository
 git clone http://github.com/salah3x/project-manager
-```
-* Naviguer vers le dossier téléchargé
-```
+Navigate to the downloaded folder
 
 cd [Path to project-manager]
-```
-* Démarer l'application :
-```
+Start the application:
 ./gradlew bootRun
-```
-ou éxécuter directement le jar
-```
+or run the jar directly
+
 ./gradlew bootRepackage
 java -jar build/libs/project-manager-0.0.1-SNAPSHOT.jar
-```
-* Allez à http://localhost:8080/
+Go to http: // localhost: 8080 /
+Note 1: The ./gradlew command requires an internet connection and may take some time to download dependencies from the application.
 
-**Remarque 1:**
-La commande ./gradlew necessite une connexion internet et peut pendre du temps pour télécharger les dépendeces de l'application.
+Note 2: To start the application under windows use the file gradlew.bat instead of gradlew.
 
-**Remarque 2:**
-Pour démarer l'application sous windows utiliser le fichier gradlew.bat au lieu du gradlew.
-
-# project
+project
